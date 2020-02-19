@@ -1,9 +1,14 @@
 from lib import GlobalConstants, Response, Request
+from requests import get
 
-url = GlobalConstants.API_URL
+if __name__ == '__main__':
+    ip = get('https://api.ipify.org').text
+    print('Requesting from IP Address:', ip)
 
-req = Request.Request(0.1, 300)
+    url = GlobalConstants.API_URL
 
-result = req.send_request(url)
+    req = Request.Request(0.1, 300)
 
-result = Response.Response.read(result)
+    result = req.send_request(url)
+
+    result = Response.Response.read(result)
