@@ -17,7 +17,14 @@ DEST = "destinations=" + END_POINT
 KEY = "key=" + API_KEY
 MODE = "mode=" + TRANSPORT
 LANGUAGE = "language=" + LANGUAGE
-DEP_TIME = "departure_time=" + str(datetime.datetime.now() + datetime.timedelta(minutes=10))
+
+CURRENT_TIME = datetime.datetime.now()
+OFFSET = datetime.timedelta(minutes=10)
+UTC_START = datetime.datetime(1970, 1, 1)
+
+SECONDS = int(((CURRENT_TIME + OFFSET) - UTC_START).total_seconds())
+
+DEP_TIME = "departure_time=" + str(SECONDS)
 
 PARAMETERS = BASE_URL + OUTPUT_FORMAT + "?" + ORIGIN + PARAM_SEP + DEST + PARAM_SEP + MODE + PARAM_SEP + LANGUAGE + PARAM_SEP + DEP_TIME + PARAM_SEP + KEY
 
