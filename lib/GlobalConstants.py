@@ -3,8 +3,8 @@ import datetime
 
 # custom params
 API_KEY = "AIzaSyA1dwWn7_VfAJ0UlvaNhdeUYbkkGyEUbkw"
-START_POINT = quote("Commerzone IT Park, Yerwada, Pune, 411006")
-END_POINT = quote("Harmony - Chandrarang Developers, Damodar Jagtap Path, Pimple Gurav, Pune, 411061")
+START_POINT = quote("Commerzone IT Park Yerwada Pune 411006")
+END_POINT = quote("Harmony - Chandrarang Developers Damodar Jagtap Path Pimple Gurav Pune 411061")
 BASE_URL = "https://maps.googleapis.com/maps/api/distancematrix/"
 OUTPUT_FORMAT = "json"  # can be "json / xml"
 TRANSPORT = "driving"  # can be "driving / walking / bicycling / transit"
@@ -26,6 +26,6 @@ SECONDS = int(((CURRENT_TIME + OFFSET) - UTC_START).total_seconds())
 
 DEP_TIME = "departure_time=" + str(SECONDS)
 
-PARAMETERS = BASE_URL + OUTPUT_FORMAT + "?" + ORIGIN + PARAM_SEP + DEST + PARAM_SEP + MODE + PARAM_SEP + LANGUAGE + PARAM_SEP + DEP_TIME + PARAM_SEP + KEY
+PARAMETERS = OUTPUT_FORMAT + "?" + ORIGIN + PARAM_SEP + DEST + PARAM_SEP + MODE + PARAM_SEP + LANGUAGE + PARAM_SEP + DEP_TIME + PARAM_SEP + KEY
 
 API_URL = BASE_URL + OUTPUT_FORMAT + "?" + PARAMETERS

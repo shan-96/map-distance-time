@@ -7,8 +7,8 @@ if __name__ == '__main__':
 
     url = GlobalConstants.API_URL
 
-    req = Request.Request(0.1, 300)
+    req = Request.Request(GlobalConstants.API_KEY)
 
-    result = req.send_request(url)
+    result = req.send_request()
 
     result = Response.Response.read(result)
